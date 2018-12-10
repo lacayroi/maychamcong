@@ -1,0 +1,58 @@
+{% if currencies|length > 1 %}
+  {% if layout is defined and layout == 'list' %}
+  <form action="{{ action }}" method="post" enctype="multipart/form-data" class="form-currency">
+    <div class="btn-group">
+      <span class="title">{{ text_currency }}</span>
+      <ul class="{{extra_class}}">
+        {% for currency in currencies %}
+        {% if currency.symbol_left %}
+        <li>
+          <button class="currency-select btn btn-link btn-block" type="button" name="{{ currency.code }}">{{ currency.symbol_left }}</button>
+        </li>
+        {% else %}
+        <li>
+          <button class="currency-select btn btn-link btn-block" type="button" name="{{ currency.code }}">{{ currency.symbol_right }}</button>
+        </li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </form>
+  {% else %}
+    <div class="pull-right padding-left-20 {% if extra_class is defined %} {{extra_class}}{% endif %}">
+     <form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-currency">
+    <div class="btn-group dropdown">
+      <button class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+        {% for currency in currencies %}
+          {% if currency.symbol_left and currency.code == code %} 
+            <span><strong>{{ currency.symbol_left }}</strong></span> 
+          {% elseif currency.symbol_right and currency.code == code %} 
+            <span>
+              <strong>{{ currency.symbol_right }}</strong>
+            </span> 
+          {% endif %}
+        {% endfor %} 
+        <span class="hidden-xs hidden-sm hidden-md">{{ text_currency }}</span>&nbsp;<span><i class="fa fa-caret-down"></i></span>
+      </button>
+      <div class="dropdown-menu">
+        <ul class="links list-unstyled">
+          {% for currency in currencies %}
+            {% if currency.symbol_left %}
+              <li>
+                <button class="currency-select btn btn-link btn-block" type="button" name="{{ currency.code }}">{{ currency.symbol_left }} {{ currency.title }}</button>
+              </li>
+            {% else %}
+              <li>
+                <button class="currency-select btn btn-link btn-block" type="button" name="{{ currency.code }}">{{ currency.symbol_right }} {{ currency.title }}</button>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <input type="hidden" name="code" value="" />
+    <input type="hidden" name="redirect" value="{{ redirect }}" />
+  </form>
+    </div>
+  {% endif %}
+{% endif %}

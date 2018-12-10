@@ -1,0 +1,84 @@
+{% if settings.tabs and settings.category %}
+{% set id = random(1..9) + random() %}
+<div class="box-product-carousel" id="module-product-carousel">
+  <div class="box-heading">
+    {% if (settings.title == "true") %}
+    <h3>{{ settings.title_product }}</h3>{% endif %}
+  </div>  
+  <div class="box-content">
+      <div class="swiper-container {% if settings.products|length <= settings.item*settings.rows %}swiper-no-swiping{% endif %}" id="product{{id}}">
+      <div class="swiper-wrapper">
+        {% for product in settings.products %}
+        <div class="swiper-slide">
+          <div class="product-thumbs">
+            <div class="product-image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.thumb }}" class="img-responsive" /></a></div>
+            <div class="caption">
+              <h4 class="name"><a href="{{ product.href }}">{{ product.name }}</a></h4>
+              <div class="rating">
+                {% for i in 1..5 %}
+                {% if product.rating < i %}
+                <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
+                {% else %}
+                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
+                {% endif %}
+                {% endfor %}
+              </div>
+              <p class="hidden">{{ (product.description|striptags)|slice(0,58) }}...</p>
+              {% if product.price %}
+              <p class="price">
+                {% if not product.special %}
+                {{ product.price }}
+                {% else %}
+                <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+                {% endif %}
+                {% if product.tax %}
+                <span class="price-tax hidden">{{ text_tax }} {{ product.tax }}</span>
+                {% endif %}
+              </p>
+              {% endif %}
+            </div>
+            <div class="button-group hidden">
+              <button class="btn btn-default add" type="button" onclick="cart.add('{{ product.product_id }}';"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+              <button class="btn btn-default" type="button" data-toggle="tooltip" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');"><i class="fa fa-heart"></i></button>
+              <button class="btn btn-default" type="button" data-toggle="tooltip" title="{{ button_compare }}" onclick="compare.add('{{ product.product_id }}');"><i class="fa fa-exchange"></i></button>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-pager">
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>                     
+  </div>
+</div>
+<script type="text/javascript"><!--
+$('#product{{id}}').swiper({
+  pause: 'hover',
+  speed: 800,
+  nextButton: '.swiper-button-next',
+  prevButton: '.swiper-button-prev',
+  slidesPerView: {{ settings.item ? settings.item : 2}},
+  loop:{{ settings.loop ? settings.loop : 'false'}},
+  {% if settings.auto_play == 'true' %}autoplay: {{ settings.auto_play_time ? settings.auto_play_time : 0 }},
+  {% endif %}noSwipingClass: 'swiper-no-swiping',
+  slidesPerColumn:{{ settings.rows ? settings.rows : 1 }},
+  spaceBetween: 10,
+  breakpoints: {
+    767: {
+      slidesPerView: 1,
+      {% if settings.products|length > 1*settings.rows %}
+      noSwiping: false
+      {% endif %}
+    },
+    991: {
+      slidesPerView: 2,
+      {% if settings.products|length > 2*settings.rows %}
+      noSwiping: false
+      {% endif %}
+    }, 
+  }
+});
+--></script>
+{% endif %}

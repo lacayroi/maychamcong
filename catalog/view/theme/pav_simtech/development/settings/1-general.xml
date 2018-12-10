@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<settings>
+	<author>pavotheme</author>
+	<name>General</name>
+	<id>general</id>
+	<icon>fa fa-gear</icon>
+
+	<item>
+		<id>default_skin</id>
+		<group>Global</group>
+		<label>Default Skin</label>
+		<type>select_skin</type>
+		<wrapper_class>default-skin</wrapper_class>
+	</item>
+	
+
+	<item>
+		<id>footer_blockbuilder</id>
+		<group>Global</group>
+		<label>Footer Block Builder</label>
+		<type>select_blockbuilder</type>
+		<wrapper_class></wrapper_class>
+	</item>
+
+	<item>
+		<label>Keep Header Sticky</label>
+		<id>keepheader</id>
+		<group>Global</group>
+		<default>1</default>
+		<type>select</type>
+		<option>
+			<text>Yes</text>
+			<value>1</value>
+		</option>
+		<option>
+			<text>No</text>
+			<value>0</value>
+		</option>
+	</item>
+	
+	<item>
+		<label>Header Layout</label>
+		<id>header_layout</id>
+		<type>select_header</type>
+		<group>Global</group>
+	</item>
+
+	<item>
+		<id>google_map_api_key</id>
+		<group>Global</group>
+		<label>Google Map API Key</label>
+		<type>input</type>
+		<default><![CDATA[AIzaSyB9ytDC_XmgWVG7CMMPvNpvz9t58jfu4j0]]></default>
+	</item>
+	<item>
+		<label>Category Layout</label>
+		<id>category_layout</id>
+		<type>select_category_layout</type>
+		<group>Global</group>
+	</item>
+	<item>
+		<label>Product Layout</label>
+		<id>product_layout</id>
+		<type>select_product_layout</type>
+		<group>Global</group>
+	</item>
+	<item>
+		<label>Offcanvas menu</label>
+		<id>offcanvas</id>
+		<group>Global</group>
+		<default>category</default>
+		<type>select</type>
+		<option>
+			<text>Category</text>
+			<value>category</value>
+		</option>
+		<option>
+			<text>Megamenu</text>
+			<value>megamenu</value>
+		</option>
+	</item>
+</settings>

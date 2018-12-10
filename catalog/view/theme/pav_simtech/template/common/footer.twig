@@ -1,0 +1,95 @@
+{% if blockbuilder %}
+  <footer class="footer-blockbuilder">
+    {{ blockbuilder }}
+  </footer>  
+{% else %}
+  <footer id="style-footer" class="footer">
+    <div class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h5 class="footer-caption">{{ text_extra }}</h5>
+                    <ul class="list-unstyled style-extra">
+                        <li><i class="fa fa-map-marker" aria-hidden="true"></i> {{ text_address }}</li>
+                        <li><i class="fa fa-phone" aria-hidden="true"></i> {{ text_numbersphone }}</li>
+                        <li><i class="fa fa-envelope" aria-hidden="true"></i> {{ text_contactus }}</li>
+                    </ul>
+                    <div class="app-mobile">
+                        <a href="#"><img src="image/catalog/app_Home2.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <h5 class="footer-caption">{{ text_service }}</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="{{ contact }}">{{ text_contact }}</a></li>
+                        <li><a href="{{ return }}">{{ text_return }}</a></li>
+                        <li><a href="{{ sitemap }}">{{ text_sitemap }}</a></li>
+                    </ul>
+                </div>
+                {% if informations %}
+                <div class="col-sm-3">
+                    <h5 class="footer-caption">{{ text_information }}</h5>
+                    <ul class="list-unstyled">
+                        {% for information in informations %}
+                        <li><a href="{{ information.href }}">{{ information.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+
+                </div>
+                {% endif %}
+                <div class="col-sm-3">
+                    <h5 class="footer-caption">{{ text_account }}</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="{{ account }}">{{ text_account }}</a></li>
+                        <li><a href="{{ order }}">{{ text_order }}</a></li>
+                        <li><a href="{{ wishlist }}">{{ text_wishlist }}</a></li>
+                        <li><a href="{{ newsletter }}">{{ text_newsletter }}</a></li>
+                    </ul>
+                    <div class="socials">
+                        <ul class="bo-social-icons list-inline clearfix">
+                            <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li class="youtube"><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+                            <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li class="vimeo"><a href="#"><i class="fa fa-vimeo"></i></a></li>
+                            <li class="pinterest-p"><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="text-center">{{text_quote}}</p>
+        <div class="powered text-center">
+            <p>{{text_powered}}</p>
+        </div>
+    </div>
+    <div class="bo-social-icons">
+        <a href="#" class="bo-social-gray radius-x scrollup" style="display: block;"><i class="fa fa-angle-up"></i></a>
+    </div>
+</footer>
+{% endif %}
+{% for script in scripts %}
+  <script src="{{ script }}" type="text/javascript"></script>
+{% endfor %}
+<div class="sidebar-offcanvas visible-xs visible-sm">
+  <div class="offcanvas-inner panel-offcanvas">
+    <div class="offcanvas-heading">
+      <button data-toggle="offcanvas" class="btn btn btn-primary" type="button"> <span class="fa fa-times"></span></button>
+    </div>
+    <div class="offcanvas-body">
+      <div id="offcanvasmenu"></div>
+    </div>
+    <div class="offcanvas-footer panel-footer">
+      <div class="input-group" id="offcanvas-search">
+        <input type="text" class="form-control" placeholder="{{ text_seach }}" value="" name="search">
+        <span class="input-group-btn">
+          <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{{ user_popup }}
+<div id="top"><a class="backtop scrollup" href=""><i class="fa fa-angle-up"></i></a></div>
+</body></html>

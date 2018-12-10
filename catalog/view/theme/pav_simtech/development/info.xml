@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<theme>
+ 	<name>Thanks for purchasing Pav Simtech  Shop Opencart 3 Responsive Powered By PavoThemes </name>
+ 	<guide>http://www.pavothemes.com/guides/3/pav_simtech/</guide>
+ 	<update>none</update>
+ 	<description> <![CDATA[
+Pav Simtech is a powerful Opencart 3 theme for multiple shop types with modern and creative design concept to show your products in smart layouts. The Opencart 3 theme is super flexible with 4 pre-made shop websites: Electronics, Digital, Fashion and Megashop, and supports multiple header styles.
+</br>
+The digital Opencart 3 theme is based on our all new framework - Pav Opencart 3 Theme Framework, one of the best Opencart 3 framework using latest technologies, advanced new features, clean and lean codebase, amazing page builder, theme customization tool, Megamenu builder and more.
+</br>
+Using our built-in 1-click sample data installation feature, you can easier replicate any of pre-made demos to your website to save lots of time.
+]]>
+
+</description>
+ 	<support>
+        <![CDATA[
+            <p>If you have any issue while using please keep contact us via:
+            <ul>
+                <li>Helpdesk: <a href="http://www.pavothemes.com/support/helpdesk.html" target="_blank">Submit a Ticket</a> </li>
+                <li>Email: Send us for <a href="mailto:pavothemes@gmail.com">pavothemes@gmail.com</a> </li>
+            </ul>
+            </p>
+            <p>
+                <a id="btn-guide" href="http://www.pavothemes.com/guides/3/pav_simtech/" class="green button custom-popup btn-save" rel=""><span class="fa fa-book"></span>UserGuide</a>
+                <a id="btn-guide" href="http://www.pavothemes.com/blog/opencart-3-tutorials/210-how-to-install-opencart-3-step-by-step-guide-with-screenshots.html" class="green button custom-popup btn-save" rel=""><span class="fa fa-book"></span>General Guide</a>
+            </p>
+
+            <p><i>This theme is built in Pavo Opencar 3 Theme Framework 6!!!</i></p>
+        ]]>
+ 	</support>
+</theme>

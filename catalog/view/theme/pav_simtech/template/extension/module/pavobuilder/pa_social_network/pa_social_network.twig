@@ -1,0 +1,37 @@
+{% if settings.status == "true" %}
+<div class="social">
+	<ul class="bo-social-icons list-inline clearfix text-center">
+	{% if settings.facebook %}
+	<li class ="facebook">
+		<a class="_blank" href="{{settings.link_facebook}}">
+			<i class="fa fa-facebook"></i>
+		</a>
+	</li>
+	{% endif %}
+	{% if settings.youtube %}
+	<li class ="youtube"><a class="_blank" href="{{settings.link_youtube}}"><i class="fa fa-youtube-play"></i></a></li>
+	{% endif %}
+	{% if settings.instagram %}
+	<li class ="instagram"><a class="_blank" href="{{settings.link_instagram}}"><i class="fa fa-instagram"></i></a></li>
+	{% endif %}
+	{% if settings.twitter %}
+	<li class ="twitter"><a class="_blank" href="{{settings.link_twitter}}"><i class="fa fa-twitter"></i></a></li>
+	{% endif %}
+	{% if settings.reddit %}
+	<li class ="reddit"><a class="_blank" href="{{settings.link_reddit}}"><i class="fa fa-reddit"></i></a></li>
+	{% endif %}
+	{% if settings.pinterest %}
+	<li class ="pinterest"><a class="_blank" href="{{settings.link_pinterest}}"><i class="fa fa-pinterest"></i></a></li>
+	{% endif %}
+	{% if settings.google_plus %}
+	<li class ="google_plus"><a class="_blank" href="{{settings.link_google_plus}}"><i class="fa fa-google-plus"></i></a></li>
+	{% endif %}
+	{% if settings.flickr %}
+	<li class ="flickr"><a class="_blank" href="{{settings.link_flickr}}"><i class="fa fa-flickr"></i></a></li>
+	{% endif %}
+	{% if settings.vine %}
+	<li class ="vine"><a class="_blank" href="{{settings.link_vine}}"><i class="fa fa-vimeo-square"></i></a></li>
+	{% endif %}
+	</ul>
+</div>
+{% endif %}
